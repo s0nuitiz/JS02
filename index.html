@@ -173,8 +173,7 @@
 
   function moveNoButton() {
   const rect = container.getBoundingClientRect();
-
-  ```
+    
   const buttonWidth = noButton.offsetWidth;
   const buttonHeight = noButton.offsetHeight;
   const padding = 15;
@@ -194,8 +193,8 @@
   noButton.style.position = "fixed";
   noButton.style.left = randomX + "px";
   noButton.style.top = randomY + "px";
-  ```
   }
+
   // Move when mouse gets near
   noButton.addEventListener('mouseover', moveNoButton);
 

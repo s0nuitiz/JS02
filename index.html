@@ -169,15 +169,33 @@
   });
 
   // Make NO button impossible to click
+  const container = document.querySelector(".content");
+
   function moveNoButton() {
-    const maxX = window.innerWidth - noButton.offsetWidth - 20;
-    const maxY = window.innerHeight - noButton.offsetHeight - 20;
+  const rect = container.getBoundingClientRect();
 
-    noButton.style.position = 'fixed';
-    noButton.style.left = Math.random() * maxX + 'px';
-    noButton.style.top = Math.random() * maxY + 'px';
+  ```
+  const buttonWidth = noButton.offsetWidth;
+  const buttonHeight = noButton.offsetHeight;
+  const padding = 15;
+
+  const randomX =
+      rect.left +
+      padding +
+      Math.random() *
+      (rect.width - buttonWidth - padding * 2);
+
+  const randomY =
+      rect.top +
+      padding +
+      Math.random() *
+      (rect.height - buttonHeight - padding * 2);
+
+  noButton.style.position = "fixed";
+  noButton.style.left = randomX + "px";
+  noButton.style.top = randomY + "px";
+  ```
   }
-
   // Move when mouse gets near
   noButton.addEventListener('mouseover', moveNoButton);
 
